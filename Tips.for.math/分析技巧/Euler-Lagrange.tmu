@@ -1,0 +1,36 @@
+<TMU|<tuple|1.1.0|2025.0.4>>
+
+<style|<tuple|generic|french>>
+
+<\body>
+  <\question>
+    Want to find a function <math|y\<in\>\<cal-C\><rsup|1><around*|(|\<bbb-R\>|)> passing through <around*|(|0,y<rsub|0>|)>,<around*|(|x<rsub|t>,y<rsub|t>|)> s.t. ><math|G<around*|(|y|)>\<assign\><big|int><rsub|0><rsup|x<rsub|t>>F<around*|(|x,y,<wide|y|\<dot\>>|)>dx>
+
+    get extremal point.
+  </question>
+
+  <math|Set \<varepsilon\><around*|(|x|)>\<in\>\<cal-C\><rsup|1>and \<varepsilon\><around*|(|0|)>=\<varepsilon\><around*|(|x<rsub|t>|)>=0.For t\<in\>\<bbb-R\>:>
+
+  <\align>
+    <tformat|<table|<row|<cell|<frac|d G<around*|(|y+t\<varepsilon\>|)>|dt>=>|<cell|<big|int><rsub|0><rsup|x<rsub|t>><frac|\<partial\>F<around*|(|x,y+t\<varepsilon\>,<wide|y|\<dot\>>+t<wide|\<varepsilon\>|\<dot\>>|)>|\<partial\>t>dx>>|<row|<cell|=>|<cell|<big|int><rsub|0><rsup|x<rsub|t>><frac|\<partial\>F|\<partial\>y>\<varepsilon\><around*|(|x|)>+<frac|\<partial\>F|\<partial\><wide|y|\<dot\>>><wide|\<varepsilon\>|\<dot\>><around*|(|x|)>dx>>|<row|<cell|=>|<cell|<big|int><rsub|0><rsup|x<rsub|t>><frac|\<partial\>F|\<partial\>y>\<varepsilon\><around*|(|x|)>-<frac|d<frac|\<partial\>F|\<partial\><wide|y|\<dot\>>>|dx>\<varepsilon\><around*|(|x|)>dx,for \<forall\>\<varepsilon\>.>>>>
+  </align>
+
+  The result turns out:
+
+  <\equation>
+    <frac|\<partial\>F|\<partial\>y>\<varepsilon\><around*|(|x|)>-<frac|d<frac|\<partial\>F|\<partial\><wide|y|\<dot\>>>|dx>=0
+  </equation>
+
+  <\remark>
+    Interchanging integral and derivative needs some conditions, here we just do it like physicist.
+  </remark>
+
+  \;
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>
