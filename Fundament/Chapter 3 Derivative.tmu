@@ -1,6 +1,6 @@
 <TMU|<tuple|1.1.0|2025.0.4>>
 
-<style|<tuple|generic|german>>
+<style|<tuple|generic|german|number-europe>>
 
 <\body>
   <doc-data|<doc-title|Differentiating Functions of a Single Variable>|<doc-author|<author-data|<author-name|by Jason Freddie>|<\author-affiliation>
@@ -63,7 +63,7 @@
 
   \;
 
-  <section|L’ Hopital’s Rules>
+  <section|L’ H<wide|o|^>pital’s Rules>
 
   Skip when needed. It is direct result of Cauchy mean theorem.
 
@@ -71,7 +71,63 @@
 
   <section|Convex of Functions>
 
+  In this part, we use our tools of derivative to examine convex function carefully.
+
+  <\definition>
+    <math|f is convex on \<bbb-E\> \ if f<around*|(|\<lambda\>x+<around*|(|1-\<lambda\>|)>y|)>\<leqslant\>\<lambda\>f<around*|(|x|)>+<around*|(|1-\<lambda\>|)>f<around*|(|y|)> for \<forall\>x,y\<in\>\<bbb-E\>,t\<in\><around*|[|0,1|]>.>
+  </definition>
+
   \;
+
+  <with|gr-mode|<tuple|group-edit|edit-props>|gr-frame|<tuple|scale|1cm|<tuple|0.5gw|0.5gh>>|gr-geometry|<tuple|geometry|1par|0.6par>|gr-grid|<tuple|cartesian|<point|0|0>|1>|gr-edit-grid-aspect|<tuple|<tuple|axes|none>|<tuple|1|none>|<tuple|10|none>>|gr-edit-grid|<tuple|cartesian|<point|0|0>|1>|<graphics||<point|2.7|2.5>|<spline|<point|-3|3>|<point|-0.10000000000000019|-2.879596155150361>|<point|2.7|3.0>>|<spline|<point|-1.68308|-1.1>|<point|2.2|1.0620788397915377>>|<spline|<point|0.5|0.115528>|<point|0.40000000000000074|-2.697507194251114>>|<point|0.5|0.115528>|<point|0.4|-2.69751>|<point|-1.68308|-1.1>|<point|2.2|1.06208>|<point|2.7|2.5>>>
+
+  \;
+
+  Here is the equivalent statements of single-value convex function:
+
+  <\theorem>
+    Let <math|f:<around*|[|a,b|]>\<rightarrow\>\<bbb-R\>,f\<in\>\<cal-C\><rsup|0><around*|(|<around*|[|a,b|]>|)>\<cap\>\<cal-C\><rsup|1><around*|(|<around*|(|a,b|)>|)>:>
+
+    <math|<around*|(|a|)>f<rprime|'> is strictly increasing on <around*|(|a,b|)>;<around*|(|If f\<in\>\<cal-C\><rsup|2>,it is directly f<rprime|''>\<gtr\>0|)>>
+
+    <math|<around*|(|b|)> The graph is strictly above every tangent line except at tangent point,i.e. f<around*|(|y|)>\<gtr\>f<around*|(|x|)>+f<rprime|'><around*|(|x|)><around*|(|y-x|)>>
+
+    <math|\<forall\>y\<in\><around*|[|a,b|]>;>
+
+    <math|<around*|(|c|)>f is strictly convex.>
+
+    <\proof>
+      \;
+
+      <\math>
+        <around*|(|a|)>\<Rightarrow\><around*|(|b|)>:Set g<around*|(|x|)>=f<around*|(|x<rsub|0>|)>+f<rprime|'><around*|(|x<rsub|0>|)><around*|(|x-x<rsub|0>|)><around*|(|x\<neq\>x<rsub|0>|)>\<Rightarrow\>f<around*|(|x|)>-g<around*|(|x|)>=f<around*|(|x|)>-f<around*|(|x<rsub|0>|)>-f<rprime|'><around*|(|x<rsub|0>|)><around*|(|x-x<rsub|0>|)>.By Lagrange mean-value theorem,\<exists\>u between x<rsub|0 > and x s.t.\ 
+
+        <\equation>
+          f<around*|(|x|)>=f<around*|(|x<rsub|0>|)>+f<rprime|'><around*|(|u|)><around*|(|x-x<rsub|0>|)>,
+        </equation>
+
+        Then:f<around*|(|x|)>-g<around*|(|x|)>=<around*|(|f<rprime|'><around*|(|u|)>-f<rprime|'><around*|(|x<rsub|0>|)>|)><around*|(|x-x<rsub|0>|)>.
+      </math>
+
+      1.If <math|a\<leqslant\>x\<less\>x<rsub|0>,u\<in\><around*|(|x,x<rsub|0>|)>\<Rightarrow\>f<rprime|'><around*|(|u|)>\<less\>f<rprime|'><around*|(|x<rsub|0>|)>,x\<less\>x<rsub|0>\<Rightarrow\>f<around*|(|x|)>\<gtr\>g<around*|(|x|)>.>
+
+      2.If <math|x\<gtr\>x<rsub|0,>u\<in\><around*|(|x<rsub|0>,x|)>\<Rightarrow\>f<rprime|'><around*|(|u|)>\<gtr\>f<rprime|'><around*|(|x<rsub|0>|)>,x\<gtr\>x<rsub|0>\<Rightarrow\>f<around*|(|x|)>\<gtr\>g<around*|(|x|)>>.
+
+      <math|<around*|(|b|)>\<Rightarrow\><around*|(|c|)>:Set \<lambda\>\<in\><around*|[|0,1|]>.By ineq.,<around*|{|<tabular|<tformat|<table|<row|<cell|f<around*|(|x|)>\<gtr\>f<around*|(|\<lambda\>x+<around*|(|1-\<lambda\>|)>y|)>+f<rprime|'><around*|(|\<lambda\>x+<around*|(|1-\<lambda\>|)>y|)><around*|(|<around*|(|1-\<lambda\>|)><around*|(|x-y|)>|)>①>>|<row|<cell|f<around*|(|y|)>\<gtr\>f<around*|(|\<lambda\>x+<around*|(|1-\<lambda\>|)>y|)>+f<rprime|'><around*|(|\<lambda\>x+<around*|(|1-\<lambda\>|)>y|)>\<lambda\><around*|(|y-x|)>②>>>>>|\<nobracket\>>>
+
+      <math|\<lambda\>①+<around*|(|1-\<lambda\>|)>②\<Rightarrow\>\<lambda\>f<around*|(|x|)>+<around*|(|1-\<lambda\>|)>f<around*|(|y|)>\<gtr\>f<around*|(|\<lambda\>x+<around*|(|1-\<lambda\>|)>y|)>.>
+
+      <math|<around*|(|c|)>\<Rightarrow\><around*|(|a|)>:<frac|f<around*|(|\<lambda\>x+<around*|(|1-\<lambda\>|)>y|)>-f<around*|(|y|)>|\<lambda\><around*|(|x-y|)>>=<frac|f<around*|(|y+\<lambda\><around*|(|x-y|)>|)>-f<around*|(|y|)>|\<lambda\><around*|(|x-y|)>>\<less\><frac|f<around*|(|x|)>-f<around*|(|y|)>|x-y>=f<rprime|'><around*|(|c|)><around*|(|c\<in\><around*|(|y,x|)>|)><above|\<Rightarrow\>|\<lambda\>\<rightarrow\>0>f<rprime|'><around*|(|y|)>\<less\>f<rprime|'><around*|(|c|)>.>
+    </proof>
+  </theorem>
+
+  Take equality everywhere, we get the result of convex function.
+
+  If function is exactly twice-differentiable,<math|<around*|(|a|)> is the easiest way to test convexity.>
+
+  <math|<around*|(|b|)> is also called subgradient ineq. stand even for f is not differentiable.>
+
+  For more details of convex function, see convex-first-order-methods-in-optimization.
 
   \;
 
@@ -87,15 +143,15 @@
 
 <\references>
   <\collection>
-    <associate|auto-1|<tuple|1|1|..\\..\\..\\..\\AppData\\Roaming\\liiilabs\\texts\\scratch\\no_name_17.tm>>
-    <associate|auto-2|<tuple|2|?|..\\..\\..\\..\\AppData\\Roaming\\liiilabs\\texts\\scratch\\no_name_17.tm>>
-    <associate|auto-3|<tuple|3|?|..\\..\\..\\..\\AppData\\Roaming\\liiilabs\\texts\\scratch\\no_name_17.tm>>
-    <associate|auto-4|<tuple|3.1|?|..\\..\\..\\..\\AppData\\Roaming\\liiilabs\\texts\\scratch\\no_name_17.tm>>
-    <associate|auto-5|<tuple|3.2|?|..\\..\\..\\..\\AppData\\Roaming\\liiilabs\\texts\\scratch\\no_name_17.tm>>
-    <associate|auto-6|<tuple|4|?|..\\..\\..\\..\\AppData\\Roaming\\liiilabs\\texts\\scratch\\no_name_17.tm>>
-    <associate|auto-7|<tuple|5|?|..\\..\\..\\..\\AppData\\Roaming\\liiilabs\\texts\\scratch\\no_name_17.tm>>
-    <associate|auto-8|<tuple|6|?|..\\..\\..\\..\\AppData\\Roaming\\liiilabs\\texts\\scratch\\no_name_17.tm>>
-    <associate|auto-9|<tuple|7|?|..\\..\\..\\..\\AppData\\Roaming\\liiilabs\\texts\\scratch\\no_name_17.tm>>
+    <associate|auto-1|<tuple|1|1>>
+    <associate|auto-2|<tuple|2|1>>
+    <associate|auto-3|<tuple|3|1>>
+    <associate|auto-4|<tuple|3.1|1>>
+    <associate|auto-5|<tuple|3.2|1>>
+    <associate|auto-6|<tuple|4|2>>
+    <associate|auto-7|<tuple|5|2>>
+    <associate|auto-8|<tuple|6|2>>
+    <associate|auto-9|<tuple|7|2>>
   </collection>
 </references>
 
@@ -103,6 +159,22 @@
   <\collection>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Derivatives> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-1><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Chain Rule and Derivatives of Inverse Functions> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-2><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>The Mean Value Theorem and Local Extrema> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-3><vspace|0.5fn>
+
+      <with|par-left|<quote|1tab>|3.1<space|2spc>extreme <with|mode|<quote|math>|\<Leftrightarrow\>f<rprime|'><around*|(|x|)>=0> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-4>>
+
+      <with|par-left|<quote|1tab>|3.2<space|2spc>Mean-value theorems:Roll,Lagrange, Cauchy <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-5>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>The Cauchy Mean Value Theorem> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-6><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Transcendental Functions> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-7><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>L’ H<wide|o|^>pital’s Rules> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-8><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|7<space|2spc>Convex of Functions> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-9><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
