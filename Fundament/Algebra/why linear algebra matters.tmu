@@ -1,0 +1,24 @@
+<TMU|<tuple|1.1.0|2025.0.4>>
+
+<style|<tuple|generic|chinese>>
+
+<\body>
+  <doc-data|<doc-title|Why Linear Algebra Matters>|<doc-author|<author-data|<author-name|By Jason Freddie>|<\author-affiliation>
+    2025.6.13
+  </author-affiliation>>>>
+
+  At the very begining, you must be curious about why linear algebra matters. Here are some examples about some structures can work out in <math|\<bbb-R\>> but not the matrix space of matrix:
+
+  <math|1<rsup|\<ast\>>AB\<neq\>BA>
+
+  <math|2<rsup|\<ast\>> AB=0 when A,B\<neq\>0,<matrix|<tformat|<table|<row|<cell|1>|<cell|0>>|<row|<cell|0>|<cell|0>>>>><matrix|<tformat|<table|<row|<cell|0>|<cell|0>>|<row|<cell|0>|<cell|1>>>>>=0 is an example.>
+
+  Even though the structure in matrix space has nothing like things on <math|\<bbb-R\>>,but something does coinside to each other. Like <math|A\<succ\>0 iff \<lambda\><around*|(|A|)>\<gtr\>0,A\<prec\>0 iff \<lambda\><around*|(|A|)>\<less\>0;>
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>

@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{CJK}
+\usepackage{amsmath,amssymb,graphicx}
+
+%%%%%%%%%% Start TeXmacs macros
+\newcommand{\tmaffiliation}[1]{\\ #1}
+\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+%%%%%%%%%% End TeXmacs macros
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+
+\title{Gradient Descent}
+
+\author{
+  By Jason Freddie
+  \tmaffiliation{2025.6.6}
+}
+
+\maketitle
+
+In this chapter we formulate the concept of gradient descent.
+\begin{equation}
+  x_{t + 1} = x_t - \eta_t \nabla f (x_t)
+\end{equation}
+
+\section{Calculus View}
+
+By the definition of directional derivative: $f : \mathbb{R}^n  \rightarrow
+\mathbb{R}, x, d \in \mathbb{R}^n, t > 0. f' (x ; d) = \underset{t \rightarrow
+0^+}{\lim} \frac{f (x + t d) - f (x)}{t} .$
+
+Want to find $f (x + t d^{\ast}) > f (x + t d) \Rightarrow \frac{f (x + t
+d^{\ast}) - f (x)}{t} > \frac{f (x + t d) - f (x)}{t} \overset{t \rightarrow
+0}{\Rightarrow} f' (x ; d^{\ast}) > f' (x ; d) \Rightarrow$
+
+$\langle \nabla f (x), d^{\ast} \rangle > \langle \nabla f (x), d \rangle .
+\tmop{Notice} \langle \nabla f (x), d \rangle \leqslant \| \nabla f (x) \|  \|
+d \| \tmop{take} \tmop{equality} \tmop{iff} \nabla f (x) \backslash \backslash
+d \Rightarrow d^{\ast} \backslash \backslash \nabla f (x) .$
+
+\
+
+Then choosing the negative gradient direction is the fastest descent
+direction for convex function!
+
+\raisebox{0.0\height}{\includegraphics[width=14.874147317329136cm,height=8.386642398006035cm]{gradient
+descent-1.pdf}}
+
+\section{ Descent Lemma}
+
+For L-smooth function:
+\begin{equation}
+  \| \nabla f (x) - \nabla f (y) \|_{\ast} \leqslant L \| x - y \|,
+\end{equation}
+Things could be much easier:
+
+\raisebox{0.0\height}{\includegraphics[width=14.874147317329136cm,height=14.115997638724911cm]{gradient
+descent-2.pdf}}
+
+If we want to solve:
+\begin{equation}
+  \underset{y}{\min} f (x_t) + \langle \nabla f (x_t), y - x_t \rangle +
+  \frac{L_t}{2} \| x_t - y \|^2,
+\end{equation}
+we can get $\nabla f (x_t) - L (x_t - y) = 0 \Rightarrow y = x_t -
+\frac{\nabla f (x_t)}{L_t}, \tmop{where} L_t \geqslant L.$
+
+\
+
+\section{Gradient flow}
+
+Consider solving the trajectary:
+\begin{equation}
+  \frac{d x_t}{\tmop{dt}} = - \nabla f (x_t) .
+\end{equation}
+Give the LHS a discrete form can get $\frac{x_{t + \Delta t} - x_t}{\Delta t}
+= - \nabla f (x_t) \Rightarrow x_{t + \Delta t} = x_t - \Delta t \ast \nabla f
+(x_t) .$
+
+\end{CJK*}
+\end{document}

@@ -1,0 +1,34 @@
+<TMU|<tuple|1.1.0|2025.0.4>>
+
+<style|<tuple|generic|chinese>>
+
+<\body>
+  <doc-data|<doc-title|Determinant Derivative>|<doc-author|<author-data|<author-name|By Jason Freddie>|<\author-affiliation>
+    2025.6.7
+  </author-affiliation>>>>
+
+  Consider <math|<around*|\||A|\|>\<assign\>determinant of A<around*|(|t|)>\<in\>\<bbb-R\><rsup|n\<times\>n>\<times\>\<bbb-R\><rsup|+>,want to find <frac|d<around*|\||A|\|>|dt>. OBS:<around*|\||A<around*|(|a<rsub|ij>+\<varepsilon\>|)>|\|>-<around*|\||A|\|>=\<varepsilon\>C<rsub|ij,>>
+
+  <math|A<around*|(|i,j|)>\<assign\>A delete i-row,j-column ，M<rsub|ij>\<assign\><around*|\||A<around*|(|i,j|)>|\|><around*|(|<around*|(|i,j|)>-Minor |)>,>
+
+  <math|C<rsub|ij>\<assign\><around*|(|-1|)><rsup|<around*|(|i+j|)>>M<rsub|ij><around*|(|cofactor of A|)>.> So:
+
+  <\equation>
+    <frac|\<partial\><around*|\||A|\|>|\<partial\>a<rsub|ij>>=C<rsub|ij>.
+  </equation>
+
+  Consider:
+
+  <\align>
+    <tformat|<table|<row|<cell|<frac|d<around*|\||A|\|>|dt>=>|<cell|<below|<big|sum>|i,j\<in\><around*|[|n|]>><frac|\<partial\><around*|\||A|\|>|\<partial\>a<rsub|ij>><frac|d a<rsub|ij>|dt><around*|(|total derivative|)>>>|<row|<cell|=>|<cell|<around*|\||A|\|><below|<big|sum>|i,j\<in\><around*|[|n|]>><frac|C<rsub|ij>|<around*|\||A|\|>><frac|d a<rsub|ij>|dt>>>|<row|<cell|<around*|(|Since A<rsup|-1>=<frac|C<rsup|T>|<around*|\||A|\|>>|)>=>|<cell|<around*|\||A|\|><below|<big|sum>|i,j\<in\><around*|[|n|]>><around*|(|A<rsup|-1>|)><rsub|ji><around*|(|<frac|d A|dt>|)><rsub|ij>>>|<row|<cell|<around*|(|Consider C=AB,c<rsub|ij>=<above|<below|<big|sum>|k=1>|n>a<rsub|ik>b<rsub|kj>|)>=>|<cell|<around*|\||A|\|>Tr<around*|(|A<rsup|-1><frac|d A|dt>|)>>>>>
+  </align>
+
+  \ 
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>
