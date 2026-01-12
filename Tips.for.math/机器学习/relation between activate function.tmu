@@ -1,0 +1,75 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|chinese|number-europe>>
+
+<\body>
+  In neural network, we are estimating the "activate process" of neuron. When receiving the signal, the state becomes 1, while not is 0. So the final vector we get for n receivers is a one-hot vector.
+
+  If we want to estimate this process in a smooth way, in another word, we want to do derivative on this process, this is the optimization problem we are facing,choosing a good probability distribution to maximum:
+
+  <\equation>
+    w<rsup|\<ast\>>=<below|argmax|w\<in\>\<Delta\><rsup|K>><around*|{|<around*|\<langle\>|w,y|\<rangle\>>|}>,
+  </equation>
+
+  where <math|y> are the scores of neurons.
+
+  \;
+
+  For changing this to a convex problem since we want to do GD, we can add a regularizer:
+
+  <\equation>
+    w<rsup|\<ast\>>=<below|argmax|w\<in\>\<Delta\><rsup|K>><around*|{|<around*|\<langle\>|w,y|\<rangle\>>-\<beta\><below|<big|sum>|i\<in\><around*|[|K|]>>w<rsub|i>ln<around*|(|w<rsub|i>|)>|}>,
+  </equation>
+
+  we can solve by KKT:
+
+  <\equation>
+    w<rsub|i><rsup|\<ast\>>=<frac|exp<around*|(|<frac|y<rsub|i>|\<beta\>>|)>|<below|<big|sum>|j\<in\><around*|[|K|]>>exp<around*|(|<frac|y<rsub|j>|\<beta\>>|)>>=<frac|1|<below|<big|sum>|j\<in\><around*|[|K|]>>exp<around*|(|<frac|y<rsub|j>-y<rsub|i>|\<beta\>>|)>>.
+  </equation>
+
+  <math|\<beta\>\<rightarrow\>0,w<rsup|\<ast\>>\<rightarrow\>e<rsub|i<rsup|\<ast\>>>.>
+
+  So adding regularizer is just a way to proceed this problem to continuity approximation by soft-max.
+
+  For 2-classification problem, Softmax<math|<around*|(|x|)>=<frac|e<rsup|x<rsub|1>>|e<rsup|x<rsub|1>>+e<rsup|x<rsub|2>>>=<frac|1|1+exp<around*|(|x<rsub|2>-x<rsub|1>|)>>=\<sigma\><around*|(|x<rsub|2>-x<rsub|1>|)>.>
+
+  Then we talk about ReLU, which may not so obvious to be like either sigmoid or softmax,
+
+  but if you not only see, but observe, you will find:
+
+  \;
+
+  <\equation>
+    ReLU<around*|(|x|)>=max<around*|{|0,x|}>=<below|lim|k\<rightarrow\>+\<infty\>><frac|log<around*|(|e<rsup|kx>+1|)>|k>,
+  </equation>
+
+  <\equation>
+    <around*|(|<frac|log<around*|(|e<rsup|kx>+1|)>|k>|)><rprime|'>=<frac|1|k>\<times\><frac|1|e<rsup|kx>+1>\<times\>e<rsup|kx>\<times\>k=<frac|1|1+e<rsup|-kx>>=sigmoid<around*|(|x|)>,
+  </equation>
+
+  where ReLU in this sense can be treated as the cumulation of the signal. We say cumulation is because here we have a integral to connect sigmoid and ReLU. Not with standing, if we take k to be 1, we get smoothed ReLU.
+
+  \;
+
+  \;
+
+  \;
+
+  \;
+
+  \;
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>
+
+<\references>
+  <\collection>
+    <associate|auto-1|<tuple|5|?>>
+    <associate|firstHeading|<tuple|5|?>>
+  </collection>
+</references>

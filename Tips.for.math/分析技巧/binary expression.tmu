@@ -1,0 +1,14 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|chinese|number-europe>>
+
+<\body>
+  <math|n=<above|<below|<big|sum>|i=1>|m>a<rsub|i> 2<rsup|i-1>\<Rightarrow\><frac|n|2<rsup|m>>=a<rsub|m>+\<varepsilon\>,where \<varepsilon\>=<frac|<above|<below|<big|sum>|i=1>|m-1>a<rsub|i>\<times\>2<rsup|i-1>|2<rsup|m>>\<leqslant\><frac|2<rsup|m>-1|2<rsup|m>>\<less\>1. OBS a<rsub|m>=1,otherwise n=<above|<below|<big|sum>|i=1>|l>a<rsub|i> 2<rsup|i-1>,if a<rsub|m>,a<rsub|m-1>,\<ldots\>,a<rsub|l+1> are all 0\<Rightarrow\><frac|n|2<rsup|m>>=1+\<varepsilon\>\<Rightarrow\>m=<around*|\<lfloor\>|log<rsub|2><around*|(|n|)>|\<rfloor\>>.>
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>

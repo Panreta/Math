@@ -1,0 +1,48 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|number-europe|python>>
+
+<\body>
+  GCD(a,b)(Euclidean Algo.):
+
+  <\python-code>
+    \ \ while b:
+
+    \ \ \ \ \ \ \ \ \ \ \ \ a, b = b, a % b
+
+    \ \ \ \ \ \ \ \ return a
+
+    \ \ \ \ \ \ \ 
+
+    \ \ \ \ \ \ \ 
+  </python-code>
+
+  WLOG, set <math|a\<gtr\>b>, if <math|a\<less\>b>, <math|a,b=b,a>%b=b,a.
+
+  Then: <math|a=bk<rsub|1>+r<rsub|1>,b=r<rsub|1>k<rsub|2>+r<rsub|2>\<ldots\>> Bezout Theorem can show <math|\<exists\>r<rsub|n>,r<rsub|n+1>>, <math|u,v\<in\>\<bbb-Z\>>,s.t.\ 
+
+  <\equation>
+    ur<rsub|n>+vr<rsub|n+1>=1.
+  </equation>
+
+  This is also when the algorithm gets converge.
+
+  \;
+
+  <\python>
+    \;
+
+    \ \ \ \ \ \ \ 
+  </python>
+
+  <\python-code>
+    \;
+  </python-code>
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>

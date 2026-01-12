@@ -1,0 +1,28 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|chinese|number-europe>>
+
+<\body>
+  <math|<with|font|cal|A>\<assign\>vector space with element A\<in\>\<bbb-R\><rsup|n\<times\>n>,<with|font|cal| V>\<assign\>vector space with v\<in\>\<bbb-R\><rsup|n<rsup|2>>:<around*|(|<with|font|cal|A>,<around*|\<langle\>|\<cdummy\>,\<cdummy\>|\<rangle\>><rsub|F>|)>\<cong\><around*|(|<with|font|cal|V>,<around*|\<langle\>|\<cdummy\>,\<cdummy\>|\<rangle\>>|)>,>
+
+  where <math|<around*|\<langle\>|A,B|\<rangle\>><rsub|F>\<assign\>Tr<around*|(|A<rsup|T>B|)>=<below|<big|sum>|i,j\<in\><around*|[|n|]>>a<rsub|ji>b<rsub|ji>=<below|<big|sum>|i,j\<in\><around*|[|n|]>>a<rsub|ij>b<rsub|ij>=<around*|\<langle\>|vec<around*|(|A|)>,vec<around*|(|B|)>|\<rangle\>>>.
+
+  <math|vec<around*|(|A|)>\<assign\>A.reshape<around*|(|-1|)>>.
+
+  \;
+
+  \;
+
+  column = matrix.reshape(-1, 1): I want 1 column only, you figure out the row.
+
+  row = matrix.reshape(1, -1): I want 1 row only, you figure out the column
+
+  \;
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>

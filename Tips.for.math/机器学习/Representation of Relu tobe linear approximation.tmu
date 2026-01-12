@@ -1,0 +1,20 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|chinese|number-europe>>
+
+<\body>
+  Do we always have:<math|<above|<below|<big|sum>|i=0>|N>ReLU<rsub|i><around*|(|x|)>=<above|<below|<big|sum>|p<around*|(|i|)>=0>|M>ReLU<rsub|p<around*|(|i|)>><around*|(|x|)>,ReLU<rsub|i>:D<rsub|i>\<rightarrow\>\<bbb-R\>,D<rsub|p<rsub|i>> are mutually disjoint>
+
+  in network learning procedure?
+
+  <math|Example:f<rsub|1><around*|(|x|)>=2x,x\<in\><around*|[|1,9|]>;f<rsub|2><around*|(|x|)>=3x,x\<in\><around*|[|5,13|]>\<Rightarrow\>f<rsub|p<around*|(|1|)>><around*|(|x|)>=2x,x\<in\><around*|[|1,5|]>;f<rsub|p<around*|(|2|)>><around*|(|x|)>=5x,x\<in\><around*|[|5,9|]>>
+
+  <math|f<rsub|p<around*|(|3|)>><around*|(|x|)>=3x,x\<in\><around*|[|9,13|]>.>
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>

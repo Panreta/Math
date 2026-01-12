@@ -1,0 +1,18 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|chinese|number-europe>>
+
+<\body>
+  <math|g\<in\><with|font|cal|C<rsup|1>><around*|(|\<bbb-R\><rsup|n\<times\>m>\<rightarrow\>\<bbb-R\>|)>>.
+
+  <math|<frac|\<partial\>Tr<around*|(|g<around*|(|X|)>|)>|\<partial\>X>.> Consider <math|<frac|Tr<around*|(|g<around*|(|X+t\<Delta\>X|)>|)>-Tr<around*|(|g<around*|(|X|)>|)>|t>=<frac|Tr<around*|(|<around*|\<langle\>|\<nabla\>g<around*|(|X|)>,t\<Delta\>X|\<rangle\>>|)>|t>=Tr<around*|(|<around*|\<langle\>|\<nabla\>g<around*|(|X|)>,\<Delta\>X|\<rangle\>>|)>=<around*|\<langle\>|\<nabla\>g<around*|(|X|)>,\<Delta\>X|\<rangle\>>.>
+
+  So we may notice <math|<frac|\<partial\>Tr<around*|(|g<around*|(|X|)>|)>|\<partial\>X>=\<nabla\>g<around*|(|X|)>>.
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>

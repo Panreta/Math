@@ -1,0 +1,38 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|chinese|number-europe>>
+
+<\body>
+  \;
+
+  Set <math|J<around*|(|x|)>\<assign\><big|int><rsub|0><rsup|T>L<around*|(|t,x,<wide|x|\<dot\>>|)>dt.> Since <math|x+\<alpha\>\<eta\>=x> when <math|t=0,T\<Rightarrow\>\<eta\><around*|(|0|)>=\<eta\><around*|(|T|)>=0>.
+
+  <\align>
+    <tformat|<table|<row|<cell|J<around*|(|x+\<alpha\>\<eta\>|)>=>|<cell|<big|int><rsub|0><rsup|T>L<around*|(|t,x+\<alpha\>\<eta\>,<wide|x|\<dot\>>+\<alpha\><wide|\<eta\>|\<dot\>>|)>dt>>|<row|<cell|=>|<cell|<big|int><rsub|0><rsup|T>L<around*|(|t,x,<wide|x|\<dot\>>|)>+<around*|(|<big|int><rsub|0><rsup|T><frac|\<partial\>L|\<partial\>x>\<eta\>+<frac|\<partial\>L|\<partial\><wide|x|\<dot\>>><wide|\<eta\>|\<dot\>> |)>\<times\>\<alpha\>dt+o<around*|(|\<alpha\><rsup|2>|)>>>|<row|<cell|<around*|(|integration by part|)>=>|<cell|<big|int><rsub|0><rsup|T>L<around*|(|t,x,<wide|x|\<dot\>>|)>dt+<big|int><rsub|0><rsup|T><around*|(|<frac|\<partial\>L|\<partial\>x>\<eta\>-<frac|d<frac|\<partial\>L|\<partial\><wide|x|\<dot\>>>|dt>\<eta\>|)>\<alpha\>dt+<frac|\<partial\>L|\<partial\><wide|x|\<dot\>>>\<eta\>\<alpha\><mid|\|><rsub|0><rsup|T>+o<around*|(|\<alpha\><rsup|2>|)>>>|<row|<cell|<around*|(|Since \<eta\><around*|(|0|)>=\<eta\><around*|(|T|)>=0|)>=>|<cell|J<around*|(|x|)>+<big|int><rsub|0><rsup|T><around*|(|<frac|\<partial\>L|\<partial\>x>-<frac|d<frac|\<partial\>L|\<partial\><wide|x|\<dot\>>>|dt>|)>\<eta\>\<alpha\>dt+o<around*|(|\<alpha\><rsup|2>|)>.>>>>
+  </align>
+
+  So\ 
+
+  <\equation>
+    D J<around*|(|x|)><around*|[|a\<eta\>|]>=<big|int><rsub|0><rsup|T><around*|(|<frac|\<partial\>L|\<partial\>x>-<frac|d<frac|\<partial\>L|\<partial\><wide|x|\<dot\>>>|dt>|)>\<eta\>\<alpha\>dt<above|=|rep><around*|\<langle\>|<frac|\<partial\>L|\<partial\>x>-<frac|d<frac|\<partial\>L|\<partial\><wide|x|\<dot\>>>|dt>,a\<eta\>|\<rangle\>>.
+  </equation>
+
+  We can choose <math|\<eta\>\<less\>0> when <math|<frac|\<partial\>L|\<partial\>x>-<frac|d<frac|\<partial\>L|\<partial\><wide|x|\<dot\>>>|dt>\<less\>0>, so the positive property for inner product is still maintained.
+
+  And for bilinear and symmetric properties are trivial.
+
+  Therefore,<frame|<math|\<delta\>J=<frac|\<partial\>L|\<partial\>x>-<frac|d<frac|\<partial\>L|\<partial\><wide|x|\<dot\>>>|dt>.>>
+
+  \;
+
+  \;
+
+  <math|F=m<wide|x|\<ddot\>>=-<frac|\<partial\>U|\<partial\>x>,K=<frac|1|2>m<wide|x|\<dot\>><rsup|2>.L=U-K,<frac|\<partial\>L|\<partial\>x>=<frac|\<partial\>U|\<partial\>x>,<frac|d<around*|(|<frac|\<partial\>L|\<partial\><wide|x|\<dot\>>>|)>|dt>=<frac|dm<wide|x|\<dot\>>|dt>=m<wide|x|\<ddot\>>\<Rightarrow\><frac|\<partial\>L|\<partial\>x>=<frac|d<around*|(|<frac|\<partial\>L|\<partial\><wide|x|\<dot\>>>|)>|dt>.> \ 
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>

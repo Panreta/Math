@@ -1,0 +1,16 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|chinese|number-europe>>
+
+<\body>
+  Set <math|max<rsub|i\<in\><around*|[|n|]>>x<rsub|i>=x<rsub|M>>, <math|<around*|\<\|\|\>|x|\<\|\|\>><rsub|p>\<assign\><around*|(|<around*|\||x<rsub|1>|\|><rsup|p>+\<cdots\>++<around*|\||x<rsub|n>|\|><rsup|p>|)><rsup|<frac|1|p>>=<around*|\||x<rsub|M>|\|><around*|(|<frac|<around*|\||x<rsub|1>|\|><rsup|p>|<around*|\||x<rsub|M>|\|><rsup|p>>+\<cdots\>+<frac|<around*|\||x<rsub|n>|\|><rsup|p>|<around*|\||x<rsub|M>|\|><rsup|p>>+1|)><rsup|<frac|1|p>>>
+
+  <math|p\<rightarrow\>\<infty\>>,<math|\<forall\>i\<in\><around*|[|n|]>-M>,<math|<around*|\||<frac|x<rsub|i>|x<rsub|M>>|\|>\<less\>1\<Rightarrow\><around*|\<\|\|\>|x|\<\|\|\>><rsub|\<infty\>>=lim<rsub|p\<rightarrow\>\<infty\>><around*|(|<around*|\||x<rsub|1>|\|><rsup|p>+\<cdots\>++<around*|\||x<rsub|n>|\|><rsup|p>|)><rsup|<frac|1|p>>=<around*|\||x<rsub|M>|\|>lim<rsub|p\<rightarrow\>\<infty\>><around*|(|<frac|<around*|\||x<rsub|1>|\|><rsup|p>|<around*|\||x<rsub|M>|\|><rsup|p>>+\<cdots\>+<frac|<around*|\||x<rsub|n>|\|><rsup|p>|<around*|\||x<rsub|M>|\|><rsup|p>>+1|)><rsup|<frac|1|p>>=<around*|\||x<rsub|M>|\|>im<rsub|p\<rightarrow\>\<infty\>>1+<around*|(|<frac|<around*|\||x<rsub|1>|\|><rsup|p>|<around*|\||x<rsub|M>|\|><rsup|p>>+\<cdots\>+<frac|<around*|\||x<rsub|n>|\|><rsup|p>|<around*|\||x<rsub|M>|\|><rsup|p>>|)><rsup|<frac|1|p>>=<around*|\||x<rsub|M>|\|>.>
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>

@@ -1,0 +1,18 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|chinese|number-europe>>
+
+<\body>
+  <math|>
+
+  \;
+
+  <math|<around*|{|<tabular|<tformat|<table|<row|<cell|<frac|dy|dt>=y,>>|<row|<cell|y<rsub|0 > is fixed.>>>>>\<Rightarrow\><frac|y<rsub|n>-y<rsub|n-1>|h>=y<rsub|n-1> for h=<frac|1|T>.|\<nobracket\>>> <math|\<Rightarrow\>y<rsub|n>=<around*|(|1+h|)><rsup|n>y<rsub|0>=<around*|(|1+h|)><rsup|<frac|t|h>>y<rsub|0><above|=|h\<rightarrow\>0>y<rsub|0>e<rsup|t>>
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>

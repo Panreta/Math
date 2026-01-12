@@ -1,0 +1,50 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|number-europe>>
+
+<\body>
+  <section|Matrix Calculus>
+
+  <\equation>
+    f<rprime|'><around*|(|x,u|)>=<below|lim|t\<rightarrow\>0><frac|f<around*|(|x+t u|)>-f<around*|(|x|)>|t>=<around*|\<langle\>|\<nabla\>f<around*|(|x|)>,u|\<rangle\>>=<around*|\<langle\>|\<nabla\>f<around*|(|x|)>\|u|\<rangle\>>.
+  </equation>
+
+  \<less\>\| is bra-ket in quantum machanic, in case to distinguish the column-vector or the row-vector.\ 
+
+  <\example>
+    <math|f<around*|(|x|)>=<around*|\<\|\|\>|x|\<\|\|\>><rsup|2>,x\<in\>\<bbb-R\><rsup|n>.<around*|\<\|\|\>|.|\<\|\|\>> is the Euclidean norm.>
+
+    <math|><math|<frac|f<around*|(|x+t u|)>-f<around*|(|x|)>|t>=<frac|<around*|\<\|\|\>|x+t u|\<\|\|\>><rsup|2>-<around*|\<\|\|\>|x|\<\|\|\>><rsup|2>|t>=2<around*|\<langle\>|x,u|\<rangle\>>+t<around*|\<\|\|\>|u|\<\|\|\>><rsup|2><above|\<rightarrow\>|t\<rightarrow\>0>2<around*|\<langle\>|x,u|\<rangle\>>=<around*|\<langle\>|\<nabla\>f<around*|(|x|)>,u|\<rangle\>>\<Rightarrow\>\<nabla\>f<around*|(|x|)>=2x.>
+
+    By definition:
+
+    <math|<around*|\<\|\|\>|x|\<\|\|\>><rsup|2>=x<rsub|1><rsup|2>+\<cdots\>+x<rsup|2><rsub|n>,<frac|\<partial\>f|\<partial\>x<rsub|i>>=2x<rsub|i>\<Rightarrow\>\<nabla\>f<around*|(|x|)>=<around*|(|<frac|\<partial\>f|\<partial\>x<rsub|i>>|)><rsub|i\<in\><around*|[|n|]>><rsup|T>=2x.>
+  </example>
+
+  <\example>
+    <math|f<around*|(|x|)>=x<rsup|T>A x,x\<in\>\<bbb-R\><rsup|n>.>
+
+    <math|<frac|f<around*|(|x+t u|)>-f<around*|(|x|)>|t>=<frac|<around*|(|x+tu|)><rsup|T>A <around*|(|x+tu|)>-x<rsup|T>A x|t>=<frac|t<rsup|2>u<rsup|T>Au+tu<rsup|T>Ax+tx<rsup|T>Au|t><above|\<rightarrow\>|t\<rightarrow\>0>u<rsup|T>Ax+x<rsup|T>Au=x<rsup|T>A<rsup|T>u+x<rsup|T>Au=<around*|\<langle\>|\<nabla\>f<around*|(|x|)>,u|\<rangle\>>\<Rightarrow\>\<nabla\>f<around*|(|x|)>=<around*|(|A+A<rsup|T>|)>x<rsup|>,only if A=A<rsup|T> can we get \<nabla\>f<around*|(|x|)>=2<around*|(|x<rsup|T>A|)><rsup|T>=2Ax.>
+  </example>
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>
+
+<\references>
+  <\collection>
+    <associate|auto-1|<tuple|1|1>>
+  </collection>
+</references>
+
+<\auxiliary>
+  <\collection>
+    <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Matrix Calculus> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-1><vspace|0.5fn>
+    </associate>
+  </collection>
+</auxiliary>

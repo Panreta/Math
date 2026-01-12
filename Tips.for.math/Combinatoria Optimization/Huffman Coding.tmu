@@ -1,0 +1,129 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|number-europe>>
+
+<\body>
+  <doc-data|<doc-title|Huffman Coding>|<doc-author|<author-data|<author-name|Jason Freddie>>>>
+
+  Consider we are facing a character-coding problem, we have some char to be restored:
+
+  <\big-table|<block|<tformat|<table|<row|<cell|>|<cell|a>|<cell|b>|<cell|c>|<cell|d>|<cell|e>|<cell|f>>|<row|<cell|Frequency(in thousands)>|<cell|45>|<cell|13>|<cell|12>|<cell|16>|<cell|9>|<cell|5>>|<row|<cell|Fixed-length codeword>|<cell|000>|<cell|001>|<cell|010>|<cell|011>|<cell|100>|<cell|101>>|<row|<cell|Variable-length codeword>|<cell|0>|<cell|101>|<cell|100>|<cell|111>|<cell|1101>|<cell|1100>>>>>>
+    \;
+  </big-table>
+
+  In Fixed-length codeword, we will use <math|(45+...+5)*\<times\>3\<times\>*1000=300,000> bits,
+
+  but for Variable-length codeword, we have only <math|<around*|(|45\<times\>1+<around*|(|13+12+16|)>\<times\>3+<around*|(|9+5|)>\<times\>4|)>\<times\>1000=224000> bits.
+
+  Or more math, low frequency times high length get the minimum result, which is rearrangement ineq. .
+
+  Also, the coding we will use is prefix codes, which means no codeword is other's prefix.
+
+  We can formulate the problem of codeword to set the min of:
+
+  <\equation>
+    <below|min |Tree>B<around*|(|Tree|)>=<below|min|Tree><below|<big|sum>|c\<in\>C>freq<around*|(|c|)>\<ast\>d<rsub|Tree><around*|(|c|)>,
+  </equation>
+
+  where in our last table <math|C=<around*|{|a,b,c,d,e,f|}>,d<rsub|T> ><math|is the depth of char in certain tree>.
+
+  Why building in a tree? Actually, tree height is a perfect approximation of entropy.
+
+  \;
+
+  <section|Shannon's Source Coding Theorem and Entropy>
+
+  At this part, we will show that the Shannon's entropy is the best way to do codeword.
+
+  Firstly, base on the simple observation, we have the following ineq. to show why we need prefix codes.
+
+  <\theorem>
+    (Kraft's ineq.)Set <math|f:c\<rightarrow\>f<around*|(|c|)>\<in\><around*|{|0,1|}><rsup|\<ast\>>> which makes a coding way for c.And <math|l:<around*|{|0,1|}><rsup|\<ast\>>\<rightarrow\>\<bbb-Z\><rsup|+>.>Any prefix code f we have the ineq.
+
+    <\equation>
+      <below|<big|sum>|c\<in\>C>2<rsup|-l<around*|(|f<around*|(|c|)>|)>>\<leqslant\>1.
+    </equation>
+  </theorem>
+
+  Proof is on wiki and quite long.
+
+  Arrange <math|C=<around*|{|c<rsub|i>|}><rsub|i=1><rsup|n>,l\<circ\>f<around*|(|c<rsub|i>|)>\<assign\>l<rsub|i>>,then we want to solve the optimization problem:
+
+  <\equation>
+    <below|<below|min|l<rsub|1>,\<ldots\>,l<rsub|n>\<in\>\<bbb-Z\><rsup|+>><below|<big|sum>|i\<in\><around*|[|n|]>>l<rsub|i >p<rsub|i>,|s.t.<below|<big|sum>|i\<in\><around*|[|n|]>>2<rsup|-l<rsub|i>>\<leqslant\>1.>
+  </equation>
+
+  we don't need to strenghthen that <math|p<rsub|i>=<frac|freq<around*|(|c<rsub|i>|)>|<below|<big|sum>|i\<in\><around*|[|n|]>>freq<around*|(|c<rsub|i>|)>>>.Next, since <math|<below|min|l<rsub|1>,\<ldots\>,l<rsub|n>\<in\>\<bbb-R\><rsup|>><below|<big|sum>|i\<in\><around*|[|n|]>>l<rsub|i>p<rsub|i>\<leqslant\><below|min|l<rsub|1>,\<ldots\>,l<rsub|n>\<in\>\<bbb-Z\><rsup|+>><below|<big|sum>|i\<in\><around*|[|n|]>>l<rsub|i>p<rsub|i>><math|>,
+
+  we will change to solve:
+
+  <\equation>
+    <below|<below|min|l<rsub|1>,\<ldots\>,l<rsub|n>\<in\>\<bbb-R\>><below|<big|sum>|i\<in\><around*|[|n|]>>l<rsub|i >p<rsub|i>,|s.t.<below|<big|sum>|i\<in\><around*|[|n|]>>2<rsup|-l<rsub|i>>\<leqslant\>1.>
+  </equation>
+
+  This is the common relaxation of integer optimization problem.
+
+  Firstly, set <math|<below|<big|sum>|i\<in\><around*|[|n|]>>2<rsup|-l<rsub|i>>\<less\>1,>which is in the interior of feasible set. Then <math|l<rsub|i>\<gtr\>0 \<forall\>i>,for if <math|\<exists\>i<rsup|\<ast\>> s.t. l<rsub|i<rsup|*\<ast\>>>\<leqslant\>0\<Rightarrow\>>
+
+  <math|2<rsup|-l<rsub|i<rsup|\<ast\>>>>\<gtr\>1>, contradict to <math|<below|<big|sum>|i\<in\><around*|[|n|]>>2<rsup|-l<rsub|i>>\<less\>1>.
+
+  Next, set <math|<around*|{|l<rsub|i><rsup|\<ast\>>|}> i\<in\><around*|[|n|]>> to be solution. Since <math|l<rsub|i>\<gtr\>0 \<forall\>i,>you can choose <math|l<rsub|i><rsup|\<ast\>>\<gtr\>l<rsub|i><rsup|\<ast\>\<ast\>>\<gtr\>0\<Rightarrow\><below|<big|sum>|i\<in\><around*|[|n|]>>l<rsub|i><rsup|\<ast\>\<ast\>>p<rsub|i>\<less\><below|<big|sum>|i\<in\><around*|[|n|]>>l<rsub|i><rsup|\<ast\>>p<rsub|i>>,
+
+  contradict to <math|<around*|{|l<rsub|i><rsup|\<ast\>>|}> i\<in\><around*|[|n|]>> is a solution. So we can not choose <math|l<rsub|i>> from the interior,then the optimiztion problem changes to:
+
+  <\equation>
+    <below|<below|min|l<rsub|1>,\<ldots\>,l<rsub|n>\<in\>\<bbb-R\>><below|<big|sum>|i\<in\><around*|[|n|]>>l<rsub|i >p<rsub|i>,|s.t.<below|<big|sum>|i\<in\><around*|[|n|]>>2<rsup|-l<rsub|i>>=1.>
+  </equation>
+
+  It is much more simple, set <math|q<rsub|i>\<assign\>2<rsup|-l<rsub|i>>,L<around*|(|l;\<lambda\>|)>=<below|<big|sum>|i\<in\><around*|[|n|]>><rsub| >p<rsub|i> log<around*|(|<frac|1|q<rsub|i>>|)>+\<lambda\><around*|(|<below|<big|sum>|i\<in\><around*|[|n|]>>q<rsub|i>-1|)>\<Rightarrow\>q<rsub|i>=p<rsub|i>\<Rightarrow\>l<rsub|i>=log<rsub|2><around*|(|<frac|1|p<rsub|i>>|)>.>
+
+  \;
+
+  Then we get the Shannon's entropy.
+
+  \;
+
+  <section| From Entropy to Huffman coding>
+
+  Set <math|H<around*|(|p|)>\<assign\><below|<big|sum>|i\<in\><around*|[|n|]>>p<rsub|i>log<rsub|2><around*|(|<frac|1|p<rsub|i>>|)>>.<math|H:\<Delta\><rsup|n>\<rightarrow\>\<bbb-R\>.> Since <math|<below|min|l\<in\>\<bbb-R\><rsup|n>>\<leqslant\><below|min|l\<in\>\<bbb-N\><rsup|n>>>:
+
+  <\equation>
+    H<around*|(|p|)>\<leqslant\><below|<big|sum>|i\<in\><around*|[|n|]>>p<rsub|i>d<rsub|T><around*|(|c<rsub|i>|)>\<leqslant\>H<around*|(|p|)>+1.
+  </equation>
+
+  In this way,building a binary tree is a good approximation to Shannon's entropy and it can prove before that in this way the value of codeword is no bigger than 1 compares to Shannon's entropy.
+
+  \;
+
+  \;
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>
+
+<\references>
+  <\collection>
+    <associate|auto-1|<tuple|1|1>>
+    <associate|auto-2|<tuple|1|1>>
+    <associate|auto-3|<tuple|2|2>>
+  </collection>
+</references>
+
+<\auxiliary>
+  <\collection>
+    <\associate|table>
+      <tuple|normal|<\surround|<hidden-binding|<tuple>|1>|>
+        \;
+      </surround>|<pageref|auto-1>>
+    </associate>
+    <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Shannon's Source Coding Theorem and Entropy> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-2><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc> From Entropy to Huffman coding> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-3><vspace|0.5fn>
+    </associate>
+  </collection>
+</auxiliary>

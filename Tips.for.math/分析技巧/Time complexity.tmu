@@ -1,0 +1,30 @@
+<TMU|<tuple|1.1.0|2025.0.15>>
+
+<style|<tuple|generic|chinese|number-europe>>
+
+<\body>
+  \;
+
+  For the problem like <math|T<around*|(|n|)>=T<around*|(|<frac|n|3>|)>+T<around*|(|<frac|2n|3>|)>+\<Theta\><around*|(|n|)>>:
+
+  <math|T<around*|(|n|)>\<rightarrow\>T<around*|(|<frac|n|3>|)>\<rightarrow\>T<around*|(|<frac|n|3<rsup|2>>|)>\<ldots\>\<rightarrow\>T<around*|(|1|)>\<Rightarrow\><frac|n|3<rsup|k>>=1\<Rightarrow\>k=log<rsub|3><around*|(|n|)>.>
+
+  Set <math|k<rsub|T<around*|(|<frac|n|3>|)>>> to be the height of the tree when doing expension by <math|T<around*|(|<frac|n|3>|)>>
+
+  <\align>
+    <tformat|<table|<row|<cell|T<around*|(|n|)>=>|<cell|T<around*|(|<frac|n|3>|)>+T<around*|(|<frac|2n|3>|)>+cn>>|<row|<cell|=>|<cell|T<around*|(|<frac|n|3<rsup|2>>|)>+2T<around*|(|<frac|2n|9>|)>+T<around*|(|<frac|4|9>n|)>+c<around*|(|1+1|)>n>>|<row|<cell|k is the slowest expension,here is the branch of <frac|n|2>=>|<cell|T<around*|(|1|)>+c\<times\><below|<wide*|<around*|(|1+\<cdots\>+1|)>n|\<wide-underbrace\>>|k>>>|<row|<cell|<frac|n|2<rsup|k>>=1,k=log<rsub|2>n=>|<cell|\<Theta\><around*|(|nlogn|)>.>>>>
+  </align>
+
+  For <math|T<around*|(|n|)>=T<around*|(|<frac|n|2>|)>+T<around*|(|<frac|n|3>|)>+\<Theta\><around*|(|n|)>:>
+
+  <\align>
+    <tformat|<table|<row|<cell|T<around*|(|n|)>\<leqslant\>>|<cell|T<around*|(|<frac|n|2>|)>+T<around*|(|<frac|n|3>|)>+cn>>|<row|<cell|=>|<cell|T<around*|(|<frac|n|4>|)>+2T<around*|(|<frac|n|6>|)>+T<around*|(|<frac|n|9>|)>+c<around*|(|1+<frac|5|6>|)>n>>|<row|<cell|=>|<cell|<around*|(|the summation terms of T|)>+c<around*|(|1+<frac|5|6>+<around*|(|<frac|5|6>|)><rsup|2>|)>n>>|<row|<cell|=>|<cell|T<around*|(|1|)>+c\<times\><frac|6|5>n.>>>>
+  </align>
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>
