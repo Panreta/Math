@@ -1,2 +1,2 @@
 # Math
-Something learned in SUSTech about math
+Recording the intuition I got or generated about math. A self-maintained math kit.
